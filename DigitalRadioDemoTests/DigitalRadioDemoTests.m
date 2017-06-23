@@ -70,6 +70,19 @@
     XCTAssert([item.presenter isEqualToString:@"Zan Rowe"],@"presenters don't match");
 }
 
+- (void) testCustomFieldInit {
+    
+    NSMutableDictionary *test = [NSMutableDictionary new];
+    
+    [test setObject:@"2017-06-23T10:04:20+10:00" forKey:@"time"];
+    [test setObject:@"00:03:24" forKey:@"duration"];
+    [test setObject:@[@{@"name":@"image320",@"value":@"http://www.abc.net.au/triplej/programs/img/2017/mornings_zan/background.jpg"}, @{@"name":@"displayTime",@"value":@"Mon-Fri 9am-12pm"}] forKey:@"customFields"];
+    
+    AIMEPGItem *item = [[AIMEPGItem alloc] initWithDictionary:test];
+    XCTAssert(item.customFields.count == 2, @"should have 2 custom fields");
+    XCTAssert([[item.customFields objectForKey:@"displayTime"] isEqualToString:@"Mon-Fri 9am-12pm"],@"stored custom value does not match provided value");
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
