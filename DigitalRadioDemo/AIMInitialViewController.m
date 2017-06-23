@@ -6,13 +6,13 @@
 //  Copyright © 2017 Ehab Hanna. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AIMInitialViewController.h"
 
-@interface ViewController ()
+@interface AIMInitialViewController ()
 
 @end
 
-@implementation ViewController
+@implementation AIMInitialViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

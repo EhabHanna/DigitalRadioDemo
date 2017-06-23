@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		B284672E1EFCA46B0039A7FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B284672D1EFCA46B0039A7FA /* main.m */; };
 		B28467311EFCA46B0039A7FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467301EFCA46B0039A7FA /* AppDelegate.m */; };
-		B28467341EFCA46B0039A7FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467331EFCA46B0039A7FA /* ViewController.m */; };
+		B28467341EFCA46B0039A7FA /* AIMInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */; };
 		B28467371EFCA46B0039A7FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28467351EFCA46B0039A7FA /* Main.storyboard */; };
 		B28467391EFCA46B0039A7FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28467381EFCA46B0039A7FA /* Assets.xcassets */; };
 		B284673C1EFCA46B0039A7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B284673A1EFCA46B0039A7FA /* LaunchScreen.storyboard */; };
 		B28467471EFCA46B0039A7FA /* DigitalRadioDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467461EFCA46B0039A7FA /* DigitalRadioDemoTests.m */; };
 		B28467521EFCA46B0039A7FA /* DigitalRadioDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467511EFCA46B0039A7FA /* DigitalRadioDemoUITests.m */; };
+		B28467611EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */; };
+		B28467621EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */; };
+		B28467791EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */; };
+		B284677A1EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,8 @@
 		B284672D1EFCA46B0039A7FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B284672F1EFCA46B0039A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B28467301EFCA46B0039A7FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B28467321EFCA46B0039A7FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B28467331EFCA46B0039A7FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B28467321EFCA46B0039A7FA /* AIMInitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIMInitialViewController.h; sourceTree = "<group>"; };
+		B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIMInitialViewController.m; sourceTree = "<group>"; };
 		B28467361EFCA46B0039A7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B28467381EFCA46B0039A7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B284673B1EFCA46B0039A7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +55,11 @@
 		B284674D1EFCA46B0039A7FA /* DigitalRadioDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DigitalRadioDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28467511EFCA46B0039A7FA /* DigitalRadioDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DigitalRadioDemoUITests.m; sourceTree = "<group>"; };
 		B28467531EFCA46B0039A7FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B284675F1EFCAAE40039A7FA /* AIMOnAirXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirXMLParser.h; sourceTree = "<group>"; };
+		B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMOnAirXMLParser.m; sourceTree = "<group>"; };
+		B28467761EFCAE5D0039A7FA /* AIMOnAirDocumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirDocumentParser.h; sourceTree = "<group>"; };
+		B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirDocument.h; sourceTree = "<group>"; };
+		B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMOnAirDocument.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +110,16 @@
 		B284672B1EFCA46B0039A7FA /* DigitalRadioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B28467631EFCAB4C0039A7FA /* External */,
 				B284672F1EFCA46B0039A7FA /* AppDelegate.h */,
 				B28467301EFCA46B0039A7FA /* AppDelegate.m */,
-				B28467321EFCA46B0039A7FA /* ViewController.h */,
-				B28467331EFCA46B0039A7FA /* ViewController.m */,
+				B28467321EFCA46B0039A7FA /* AIMInitialViewController.h */,
+				B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */,
+				B28467761EFCAE5D0039A7FA /* AIMOnAirDocumentParser.h */,
+				B284675F1EFCAAE40039A7FA /* AIMOnAirXMLParser.h */,
+				B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */,
+				B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */,
+				B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */,
 				B28467351EFCA46B0039A7FA /* Main.storyboard */,
 				B28467381EFCA46B0039A7FA /* Assets.xcassets */,
 				B284673A1EFCA46B0039A7FA /* LaunchScreen.storyboard */,
@@ -138,6 +153,13 @@
 				B28467531EFCA46B0039A7FA /* Info.plist */,
 			);
 			path = DigitalRadioDemoUITests;
+			sourceTree = "<group>";
+		};
+		B28467631EFCAB4C0039A7FA /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +298,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28467341EFCA46B0039A7FA /* ViewController.m in Sources */,
+				B28467341EFCA46B0039A7FA /* AIMInitialViewController.m in Sources */,
+				B28467611EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */,
 				B28467311EFCA46B0039A7FA /* AppDelegate.m in Sources */,
+				B28467791EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */,
 				B284672E1EFCA46B0039A7FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +311,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28467471EFCA46B0039A7FA /* DigitalRadioDemoTests.m in Sources */,
+				B284677A1EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */,
+				B28467621EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
