@@ -28,7 +28,7 @@
             tempName = [customField objectForKey:@"name"];
             tempValue = [customField objectForKey:@"value"];
             
-            if (tempName != nil && tempValue != nil) {
+            if (tempName != nil && tempValue != nil && tempName.length > 0 && tempValue.length >0) {
                 [tempCustomFields setObject:tempValue forKey:tempName];
             }
             
@@ -98,8 +98,9 @@
         self.statusString = [dictionary objectForKey:@"status"];
         self.status = [self statusFromString:self.statusString];
         self.artist = [dictionary objectForKey:@"artist"];
-        self.imageURL = [dictionary objectForKey:@"imageURL"];
+        self.imageURL = [dictionary objectForKey:@"imageUrl"];
         self.title = [dictionary objectForKey:@"title"];
+        self.album = [dictionary objectForKey:@"album"];
     }
     return self;
 }
@@ -108,6 +109,8 @@
     
     if ([statusString isEqualToString:@"history"]) {
         return AIMPlayoutItemStatus_HISTORY;
+    }else if ([statusString isEqualToString:@"playing"]){
+        return AIMPlayoutItemStatus_PLAYING;
     }
     
     return AIMPlayoutItemStatus_UNKNOWN;
@@ -139,8 +142,8 @@
 {
     self = [super init];
     if (self) {
-        _playoutItems = playouts;
-        _epgItems = epgs;
+        _playoutItems = [NSArray arrayWithArray:playouts];
+        _epgItems = [NSArray arrayWithArray:epgs];
     }
     return self;
 }

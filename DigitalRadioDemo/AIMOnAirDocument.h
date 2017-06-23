@@ -32,11 +32,13 @@ typedef enum {
 
 typedef enum {
     AIMPlayoutItemStatus_UNKNOWN = 0,
-    AIMPlayoutItemStatus_HISTORY
+    AIMPlayoutItemStatus_HISTORY,
+    AIMPlayoutItemStatus_PLAYING
 } AIMPlayoutItemStatus;
 
 @interface AIMPlayoutItem : AIMOnAirDocumentItem
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *album;
 @property (nonatomic, assign) AIMPlayoutItemType type;
 @property (nonatomic, assign) AIMPlayoutItemStatus status;
 @property (nonatomic, strong) NSString *artist;

@@ -10,18 +10,18 @@
 #import "AIMOnAirDocument.h"
 
 @protocol AIMOnAirDocumentParser;
-@protocol AIMEPGParserDelegate <NSObject>
+@protocol AIMOnAirDocumentParserDelegate <NSObject>
 
-- (void) parser:(id<AIMOnAirDocumentParser>) parser didFinishParsingWithObject:(AIMOnAirDocument *) onAirDocument;
-
+- (void) parser:(id <AIMOnAirDocumentParser> _Nonnull) parser didFinishParsingWithObject:(AIMOnAirDocument * _Nullable) onAirDocument;
+- (void) parser:(id<AIMOnAirDocumentParser> _Nonnull)parser didFailWithError:(NSError *_Nullable)error;
 @end
 
 @protocol AIMOnAirDocumentParser <NSObject>
 
--(instancetype) initWithFile:(NSString *) fileName;
--(instancetype) initWithRawString:(NSString *) rawString;
+-(instancetype _Nullable) initWithFile:(NSString * _Nonnull) fileName;
+-(instancetype _Nullable ) initWithRawString:(NSString * _Nonnull) rawString;
 
-@property (nonatomic, weak) id<AIMEPGParserDelegate> delegate;
+@property (nonatomic, weak) id <AIMOnAirDocumentParserDelegate> _Nullable delegate;
 
 -(void) parse;
 @end
