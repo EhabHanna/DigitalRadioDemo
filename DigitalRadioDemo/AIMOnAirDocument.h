@@ -20,6 +20,7 @@
 
 @interface AIMEPGItem : AIMOnAirDocumentItem
 @property (nonatomic, strong) NSString *epgID;
+@property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *epgDescription;
 @property (nonatomic, strong) NSString *presenter;
 @end

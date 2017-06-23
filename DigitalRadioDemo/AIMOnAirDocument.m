@@ -74,6 +74,7 @@
         self.epgID = [dictionary objectForKey:@"id"];
         self.epgDescription = [dictionary objectForKey:@"description"];
         self.presenter = [dictionary objectForKey:@"presenter"];
+        self.name = [dictionary objectForKey:@"name"];
     }
     return self;
 }
