@@ -19,6 +19,8 @@
 		B28467621EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */; };
 		B28467791EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */; };
 		B284677A1EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */; };
+		B284677C1EFCF0760039A7FA /* onair.xml in Resources */ = {isa = PBXBuildFile; fileRef = B284677B1EFCF0760039A7FA /* onair.xml */; };
+		B284677D1EFCF0760039A7FA /* onair.xml in Resources */ = {isa = PBXBuildFile; fileRef = B284677B1EFCF0760039A7FA /* onair.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		B28467761EFCAE5D0039A7FA /* AIMOnAirDocumentParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirDocumentParser.h; sourceTree = "<group>"; };
 		B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirDocument.h; sourceTree = "<group>"; };
 		B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMOnAirDocument.m; sourceTree = "<group>"; };
+		B284677B1EFCF0760039A7FA /* onair.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = onair.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,7 @@
 		B284672B1EFCA46B0039A7FA /* DigitalRadioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B284677B1EFCF0760039A7FA /* onair.xml */,
 				B28467631EFCAB4C0039A7FA /* External */,
 				B284672F1EFCA46B0039A7FA /* AppDelegate.h */,
 				B28467301EFCA46B0039A7FA /* AppDelegate.m */,
@@ -272,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B284673C1EFCA46B0039A7FA /* LaunchScreen.storyboard in Resources */,
+				B284677C1EFCF0760039A7FA /* onair.xml in Resources */,
 				B28467391EFCA46B0039A7FA /* Assets.xcassets in Resources */,
 				B28467371EFCA46B0039A7FA /* Main.storyboard in Resources */,
 			);
@@ -281,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B284677D1EFCF0760039A7FA /* onair.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
