@@ -21,6 +21,9 @@
 		B284677A1EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */; };
 		B284677C1EFCF0760039A7FA /* onair.xml in Resources */ = {isa = PBXBuildFile; fileRef = B284677B1EFCF0760039A7FA /* onair.xml */; };
 		B284677D1EFCF0760039A7FA /* onair.xml in Resources */ = {isa = PBXBuildFile; fileRef = B284677B1EFCF0760039A7FA /* onair.xml */; };
+		B28F94081EFE683000933A88 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B28F94071EFE683000933A88 /* Reachability.m */; };
+		B28F94091EFE683000933A88 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B28F94071EFE683000933A88 /* Reachability.m */; };
+		B28F940A1EFE683000933A88 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B28F94071EFE683000933A88 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,8 @@
 		B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirDocument.h; sourceTree = "<group>"; };
 		B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMOnAirDocument.m; sourceTree = "<group>"; };
 		B284677B1EFCF0760039A7FA /* onair.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = onair.xml; sourceTree = "<group>"; };
+		B28F94061EFE683000933A88 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B28F94071EFE683000933A88 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,17 +118,13 @@
 		B284672B1EFCA46B0039A7FA /* DigitalRadioDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B28F94051EFE683000933A88 /* External */,
 				B284677B1EFCF0760039A7FA /* onair.xml */,
-				B28467631EFCAB4C0039A7FA /* External */,
 				B284672F1EFCA46B0039A7FA /* AppDelegate.h */,
 				B28467301EFCA46B0039A7FA /* AppDelegate.m */,
 				B28467321EFCA46B0039A7FA /* AIMInitialViewController.h */,
 				B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */,
-				B28467761EFCAE5D0039A7FA /* AIMOnAirDocumentParser.h */,
-				B284675F1EFCAAE40039A7FA /* AIMOnAirXMLParser.h */,
-				B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */,
-				B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */,
-				B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */,
+				B284677E1EFDF1C90039A7FA /* Models */,
 				B28467351EFCA46B0039A7FA /* Main.storyboard */,
 				B28467381EFCA46B0039A7FA /* Assets.xcassets */,
 				B284673A1EFCA46B0039A7FA /* LaunchScreen.storyboard */,
@@ -159,9 +160,23 @@
 			path = DigitalRadioDemoUITests;
 			sourceTree = "<group>";
 		};
-		B28467631EFCAB4C0039A7FA /* External */ = {
+		B284677E1EFDF1C90039A7FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B28467761EFCAE5D0039A7FA /* AIMOnAirDocumentParser.h */,
+				B284675F1EFCAAE40039A7FA /* AIMOnAirXMLParser.h */,
+				B28467601EFCAAE40039A7FA /* AIMOnAirXMLParser.m */,
+				B28467771EFCB42D0039A7FA /* AIMOnAirDocument.h */,
+				B28467781EFCB42D0039A7FA /* AIMOnAirDocument.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B28F94051EFE683000933A88 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				B28F94061EFE683000933A88 /* Reachability.h */,
+				B28F94071EFE683000933A88 /* Reachability.m */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -308,6 +323,7 @@
 				B28467611EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */,
 				B28467311EFCA46B0039A7FA /* AppDelegate.m in Sources */,
 				B28467791EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */,
+				B28F94081EFE683000933A88 /* Reachability.m in Sources */,
 				B284672E1EFCA46B0039A7FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +334,7 @@
 			files = (
 				B28467471EFCA46B0039A7FA /* DigitalRadioDemoTests.m in Sources */,
 				B284677A1EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */,
+				B28F94091EFE683000933A88 /* Reachability.m in Sources */,
 				B28467621EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28F940A1EFE683000933A88 /* Reachability.m in Sources */,
 				B28467521EFCA46B0039A7FA /* DigitalRadioDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -550,6 +568,7 @@
 				B28467581EFCA46B0039A7FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B28467591EFCA46B0039A7FA /* Build configuration list for PBXNativeTarget "DigitalRadioDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -558,6 +577,7 @@
 				B284675B1EFCA46B0039A7FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B284675C1EFCA46B0039A7FA /* Build configuration list for PBXNativeTarget "DigitalRadioDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +586,7 @@
 				B284675E1EFCA46B0039A7FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
