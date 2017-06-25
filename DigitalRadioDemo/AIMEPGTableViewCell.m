@@ -27,6 +27,7 @@
     self.epgStartTimeLabel.text = [item timeAccordingToFormat:@"E d MMM 'at' hh:mm a"];
     self.epgDurationLabel.text = [item durationAccordingToFormat:@"H 'hrs' m 'mins'"];
     self.epgTitleLabel.text = item.name;
+    self.epgDescriptionLabel.text = item.epgDescription;
     if (item.presenter.length > 0) {
         self.epgPresenterLabel.text = item.presenter;
         self.epgPresenterLabel.hidden = NO;
@@ -35,4 +36,7 @@
     }
 }
 
+- (void) prepareForReuse{
+    self.epgImageView.image = [UIImage imageNamed:@"defaultImage"];
+}
 @end

@@ -8,11 +8,18 @@
 		<false/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>s3.amazonaws.com</key>
+			<dict>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>abc.net.au</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
-				<false/>
-				<key>NSAllowsArbitraryLoadsForMedia</key>
+				<true/>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
 			</dict>
 			<key>edgesuite.net</key>

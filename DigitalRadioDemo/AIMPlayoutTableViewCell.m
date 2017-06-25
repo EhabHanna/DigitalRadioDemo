@@ -72,4 +72,8 @@
     }
 }
 
+- (void) prepareForReuse{
+    self.playoutImageView.image = [UIImage imageNamed:@"defaultImage"];
+}
+
 @end

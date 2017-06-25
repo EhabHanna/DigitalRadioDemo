@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *epgPresenterLabel;
 @property (weak, nonatomic) IBOutlet UILabel *epgDurationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *epgStartTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *epgDescriptionLabel;
 
 - (void) configureCellWithItem:(AIMEPGItem *) item;
 @end
