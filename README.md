@@ -23,11 +23,11 @@ There are a few XCTests included with the project, however no UI tests.
 
 ### Testing the model parsing
 
-####Item initialization tests
+#### Item initialization tests
 1. Check if items will be initialized with values passed in Dictionaries.
 2. Check if custom fields are initialized with values passes in dictionary
 
-####Parser initialization tests
+#### Parser initialization tests
 1. Check trivial initializations with nil files or strings, empty XMLs and invalid XMLs
 2. Check initialization from XML file and from raw XML string
 3. Check if item values are parsed correctly from XML
