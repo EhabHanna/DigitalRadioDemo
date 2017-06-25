@@ -6,7 +6,7 @@ The demo will begin with a splash screen that will load and parse an
 onAir document from a local file then will move to a new screen to
 display a table view with 2 sections that show the rendered items.
 
-##Getting started
+## Getting started
 Since I did not have much to go on, I have made a few assumptions about
 how the app will behave.
 
