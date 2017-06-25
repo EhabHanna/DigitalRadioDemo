@@ -41,6 +41,15 @@
     return self;
 }
 
+- (NSString *) timeAccordingToFormat:(NSString *)format{
+    return [AIMOnAirDocumentItem date:self.time asString:format];
+}
+
+- (NSString *) durationAccordingToFormat:(NSString *)format{
+    
+    return [AIMOnAirDocumentItem date:self.duration asString:format];
+}
+
 + (NSDate *)dateFromString:(NSString *)dateString format:(NSString *)format	{
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

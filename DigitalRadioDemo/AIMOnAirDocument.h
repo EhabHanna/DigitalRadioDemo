@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSDictionary *customFields;
 
 -(instancetype) initWithDictionary:(NSDictionary *) dictionary;
+- (NSString *) timeAccordingToFormat:(NSString *) format;
+- (NSString *) durationAccordingToFormat:(NSString *) format;
 
 @end
 

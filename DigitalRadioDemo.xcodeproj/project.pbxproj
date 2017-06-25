@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B20F9A8D1EFF5E15005C515F /* AIMOnAirListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A8C1EFF5E15005C515F /* AIMOnAirListViewController.m */; };
+		B20F9A8E1EFF5E15005C515F /* AIMOnAirListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A8C1EFF5E15005C515F /* AIMOnAirListViewController.m */; };
+		B20F9A911EFF9EB9005C515F /* AIMEPGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A901EFF9EB9005C515F /* AIMEPGTableViewCell.m */; };
+		B20F9A921EFF9EB9005C515F /* AIMEPGTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A901EFF9EB9005C515F /* AIMEPGTableViewCell.m */; };
+		B20F9A951EFF9EC9005C515F /* AIMPlayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A941EFF9EC9005C515F /* AIMPlayoutTableViewCell.m */; };
+		B20F9A961EFF9EC9005C515F /* AIMPlayoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A941EFF9EC9005C515F /* AIMPlayoutTableViewCell.m */; };
+		B20F9A9E1EFFC2AD005C515F /* AimHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */; };
+		B20F9A9F1EFFC2AD005C515F /* AimHeaderViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */; };
 		B284672E1EFCA46B0039A7FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B284672D1EFCA46B0039A7FA /* main.m */; };
 		B28467311EFCA46B0039A7FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467301EFCA46B0039A7FA /* AppDelegate.m */; };
 		B28467341EFCA46B0039A7FA /* AIMInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */; };
@@ -44,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B20F9A8B1EFF5E15005C515F /* AIMOnAirListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirListViewController.h; sourceTree = "<group>"; };
+		B20F9A8C1EFF5E15005C515F /* AIMOnAirListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMOnAirListViewController.m; sourceTree = "<group>"; };
+		B20F9A8F1EFF9EB9005C515F /* AIMEPGTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMEPGTableViewCell.h; sourceTree = "<group>"; };
+		B20F9A901EFF9EB9005C515F /* AIMEPGTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMEPGTableViewCell.m; sourceTree = "<group>"; };
+		B20F9A931EFF9EC9005C515F /* AIMPlayoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMPlayoutTableViewCell.h; sourceTree = "<group>"; };
+		B20F9A941EFF9EC9005C515F /* AIMPlayoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMPlayoutTableViewCell.m; sourceTree = "<group>"; };
+		B20F9A9C1EFFC2AD005C515F /* AimHeaderViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AimHeaderViewCell.h; sourceTree = "<group>"; };
+		B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AimHeaderViewCell.m; sourceTree = "<group>"; };
 		B28467291EFCA46B0039A7FA /* DigitalRadioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalRadioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B284672D1EFCA46B0039A7FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B284672F1EFCA46B0039A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B20F9A971EFFA0A2005C515F /*  Views */ = {
+			isa = PBXGroup;
+			children = (
+				B20F9A8F1EFF9EB9005C515F /* AIMEPGTableViewCell.h */,
+				B20F9A901EFF9EB9005C515F /* AIMEPGTableViewCell.m */,
+				B20F9A931EFF9EC9005C515F /* AIMPlayoutTableViewCell.h */,
+				B20F9A941EFF9EC9005C515F /* AIMPlayoutTableViewCell.m */,
+				B20F9A9C1EFFC2AD005C515F /* AimHeaderViewCell.h */,
+				B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */,
+			);
+			name = " Views";
+			sourceTree = "<group>";
+		};
 		B28467201EFCA46B0039A7FA = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +153,9 @@
 				B28467301EFCA46B0039A7FA /* AppDelegate.m */,
 				B28467321EFCA46B0039A7FA /* AIMInitialViewController.h */,
 				B28467331EFCA46B0039A7FA /* AIMInitialViewController.m */,
+				B20F9A8B1EFF5E15005C515F /* AIMOnAirListViewController.h */,
+				B20F9A8C1EFF5E15005C515F /* AIMOnAirListViewController.m */,
+				B20F9A971EFFA0A2005C515F /*  Views */,
 				B284677E1EFDF1C90039A7FA /* Models */,
 				B28467351EFCA46B0039A7FA /* Main.storyboard */,
 				B28467381EFCA46B0039A7FA /* Assets.xcassets */,
@@ -323,8 +355,12 @@
 				B28467611EFCAAE40039A7FA /* AIMOnAirXMLParser.m in Sources */,
 				B28467311EFCA46B0039A7FA /* AppDelegate.m in Sources */,
 				B28467791EFCB42D0039A7FA /* AIMOnAirDocument.m in Sources */,
+				B20F9A911EFF9EB9005C515F /* AIMEPGTableViewCell.m in Sources */,
+				B20F9A9E1EFFC2AD005C515F /* AimHeaderViewCell.m in Sources */,
 				B28F94081EFE683000933A88 /* Reachability.m in Sources */,
 				B284672E1EFCA46B0039A7FA /* main.m in Sources */,
+				B20F9A951EFF9EC9005C515F /* AIMPlayoutTableViewCell.m in Sources */,
+				B20F9A8D1EFF5E15005C515F /* AIMOnAirListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B20F9A961EFF9EC9005C515F /* AIMPlayoutTableViewCell.m in Sources */,
+				B20F9A921EFF9EB9005C515F /* AIMEPGTableViewCell.m in Sources */,
 				B28F940A1EFE683000933A88 /* Reachability.m in Sources */,
 				B28467521EFCA46B0039A7FA /* DigitalRadioDemoUITests.m in Sources */,
+				B20F9A8E1EFF5E15005C515F /* AIMOnAirListViewController.m in Sources */,
+				B20F9A9F1EFFC2AD005C515F /* AimHeaderViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

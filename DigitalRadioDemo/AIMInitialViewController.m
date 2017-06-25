@@ -10,6 +10,7 @@
 
 #import "AIMOnAirXMLParser.h"
 #import "Reachability.h"
+#import "AIMOnAirListViewController.h"
 
 typedef enum {
     
@@ -26,6 +27,7 @@ typedef enum {
 @property (nonatomic, strong) id<AIMOnAirDocumentParser> onAirDocumentParser;
 @property (nonatomic, assign) ViewStatus viewStatus;
 @property (nonatomic, strong) NSString *onAirDocumentType;
+@property (nonatomic, strong) AIMOnAirDocument *parsedDocument;
 @end
 
 @implementation AIMInitialViewController
@@ -277,14 +279,28 @@ typedef enum {
 - (void) parser:(id<AIMOnAirDocumentParser>)parser didFinishParsingWithObject:(AIMOnAirDocument *)onAirDocument{
     
     self.viewStatus = ViewStatus_FinishedParsing;
-    [self updateViewContentsAccordingToStatus];
+    self.parsedDocument = onAirDocument;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         // transition to next view and pass ther parsed Document here
-        //[self performSegueWithIdentifier:@"onAirTableView" sender:self];
+        [self performSegueWithIdentifier:@"onAirTableView" sender:self];
     });
     
+}
+
+#pragma mark - 
+#pragma mark Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"onAirTableView"]) {
+     
+        
+        AIMOnAirListViewController *listVC = segue.destinationViewController;
+        listVC.onAirDocument = self.parsedDocument;
+        self.parsedDocument = nil;
+    }
 }
 
 
