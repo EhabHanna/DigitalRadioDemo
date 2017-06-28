@@ -58,35 +58,17 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (section == 0) {
-        if (self.onAirDocument.epgItems.count > 0) {
-            return self.onAirDocument.epgItems.count;
-        }else{
-            return self.onAirDocument.playoutItems.count;
-        }
-    }else{
-        return self.onAirDocument.playoutItems.count;
-    }
+    return [self isRowEPGAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]]?self.onAirDocument.epgItems.count:self.onAirDocument.playoutItems.count;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    UITableViewCell *cell = nil;
+    NSString *identifier = [self isRowEPGAtIndexPath:indexPath] ? EpgCellIdentifier : PlayoutCellIdentifier;
     
-    if (indexPath.section == 0) {
-        
-        if (self.onAirDocument.epgItems.count > 0) {
-            
-            cell = [tableView dequeueReusableCellWithIdentifier:EpgCellIdentifier];
-            [self configureEPGCell:(AIMEPGTableViewCell *) cell forIndexPath:indexPath];
-        }else{
-            cell = [tableView dequeueReusableCellWithIdentifier:PlayoutCellIdentifier];
-            [self configurePlayoutCell:(AIMPlayoutTableViewCell *) cell forIndexPath:indexPath];
-        }
-    }else{
-        cell = [tableView dequeueReusableCellWithIdentifier:PlayoutCellIdentifier];
-        [self configurePlayoutCell:(AIMPlayoutTableViewCell *) cell forIndexPath:indexPath];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    [self configureItemCell:(id<AIMOnAirItemTableViewCell>)cell forIndexPath:indexPath];
+    
     return cell;
 }
 
@@ -94,110 +76,69 @@
     
     AimHeaderViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
     
-    if (section == 0) {
-        
-        if (self.onAirDocument.epgItems.count > 0) {
-            
-            cell.headerTitleLabel.text = @"EPG";
-            
-        }else{
-            cell.headerTitleLabel.text = @"Playouts";
-            
-        }
-    }else{
-        cell.headerTitleLabel.text = @"Playouts";
-        
-    }
+    NSString *headerTitle = [self isRowEPGAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]] ?  @"EPG" :  @"Playouts";
+    
+    cell.headerTitleLabel.text = headerTitle;
     
     return cell;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        
-        if (self.onAirDocument.epgItems.count > 0) {
-            
-            return 100;
-            
-        }else{
-            return tableView.rowHeight;
-        }
-    }else{
-        return tableView.rowHeight;
-    }
+    return [self isRowEPGAtIndexPath:indexPath] ? 100 : tableView.rowHeight;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
     return 35.0;
 }
 
-- (void) configureEPGCell:(AIMEPGTableViewCell *) cell forIndexPath:(NSIndexPath *) indexPath{
+- (void) configureItemCell:(id<AIMOnAirItemTableViewCell>) cell forIndexPath:(NSIndexPath *) indexPath{
     
-    AIMEPGItem *item = [self.onAirDocument.epgItems objectAtIndex:indexPath.row];
+    AIMOnAirDocumentItem *item = nil;
+    NSString *imageURL = nil;
+    
+    if ([self isRowEPGAtIndexPath:indexPath]) {
+        item = [self.onAirDocument.epgItems objectAtIndex:indexPath.row];
+        imageURL = [item.customFields objectForKey:@"image50"];
+    }else{
+        item = [self.onAirDocument.playoutItems objectAtIndex:indexPath.row];
+        imageURL = ((AIMPlayoutItem *) item).imageURL;
+    }
     
     [cell configureCellWithItem:item];
-    
     UIImage *cellImage = [self.downloadedImages objectForKey:indexPath];
     
     if (cellImage) {
-        cell.epgImageView.image = cellImage;
+        [cell updateImage:[self.downloadedImages objectForKey:indexPath]];
     }else{
         if (self.onAirTableView.dragging == NO && self.onAirTableView.decelerating == NO)
         {
-            [self startIconDownloadWithURLString:[item.customFields objectForKey:@"image50"] forIndexPath:indexPath];
+            [self startIconDownloadWithURLString:imageURL forIndexPath:indexPath];
         }
     }
-    
 }
 
-- (void) configurePlayoutCell:(AIMPlayoutTableViewCell *) cell forIndexPath:(NSIndexPath *) indexPath{
+- (BOOL) isRowEPGAtIndexPath:(NSIndexPath *) indexPath{
     
-    AIMPlayoutItem *item = [self.onAirDocument.playoutItems objectAtIndex:indexPath.row];
-    
-    [cell configureCellWithItem:item];
-    
-    UIImage *cellImage = [self.downloadedImages objectForKey:indexPath];
-    
-    if (cellImage) {
-        cell.playoutImageView.image = cellImage;
-    }else{
-        if (self.onAirTableView.dragging == NO && self.onAirTableView.decelerating == NO)
-        {
-            [self startIconDownloadWithURLString:item.imageURL forIndexPath:indexPath];
-        }
-    }
+    return (indexPath.section == 0 && self.onAirDocument.epgItems.count > 0);
 }
 
 #pragma mark - 
 #pragma mark UITableViewDelegate methods
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        
-        if (self.onAirDocument.epgItems.count > 0) {
+    if ([self isRowEPGAtIndexPath:indexPath]) {
             
-            //TODO: go to epg details view controller
-            
-            [tableView deselectRowAtIndexPath:indexPath animated:YES];
-        }
-        
+        //TODO: go to epg details view controller
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
     
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-        
-        if (self.onAirDocument.epgItems.count > 0) {
-            
-            return indexPath;
-        }
-        
-    }
-    
-    return nil;
+    return ([self isRowEPGAtIndexPath:indexPath]) ? indexPath : nil;
 }
 
 #pragma mark -
@@ -220,18 +161,20 @@
         
         [iconDownloader setCompletionHandler:^{
             
-            // Display the newly loaded image
+            id<AIMOnAirItemTableViewCell> cell = (id<AIMOnAirItemTableViewCell>)[self.onAirTableView cellForRowAtIndexPath:indexPath];
+
+            // Save the newly loaded image
             if (weakIconDownloader.downloadedImage){
                 (self.downloadedImages)[indexPath] = weakIconDownloader.downloadedImage;
-            }else{
-                (self.downloadedImages)[indexPath] = [UIImage imageNamed:@"defaultImage"];
             }
+            
+            //Display the newly loaded image
+            [cell updateImage:weakIconDownloader.downloadedImage];
             
             // Remove the IconDownloader from the in progress list.
             // This will result in it being deallocated.
             [self.imageDownloadsInProgress removeObjectForKey:indexPath];
             
-            [self.onAirTableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             
         }];
         (self.imageDownloadsInProgress)[indexPath] = iconDownloader;
@@ -288,17 +231,11 @@
     
     NSString *urlString = nil;
     
-    if (indexPath.section == 0) {
+    if ([self isRowEPGAtIndexPath:indexPath]) {
         
-        if (self.onAirDocument.epgItems.count > 0) {
-            
-            AIMEPGItem *epgItem = [self.onAirDocument.epgItems objectAtIndex:indexPath.row];
-            urlString = [epgItem.customFields objectForKey:@"image50"];
-            
-        }else{
-            AIMPlayoutItem *playoutItem = [self.onAirDocument.playoutItems objectAtIndex:indexPath.row];
-            urlString = playoutItem.imageURL;
-        }
+        AIMEPGItem *epgItem = [self.onAirDocument.epgItems objectAtIndex:indexPath.row];
+        urlString = [epgItem.customFields objectForKey:@"image50"];
+        
     }else{
         AIMPlayoutItem *playoutItem = [self.onAirDocument.playoutItems objectAtIndex:indexPath.row];
         urlString = playoutItem.imageURL;

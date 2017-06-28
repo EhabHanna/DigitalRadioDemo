@@ -20,6 +20,7 @@
 
 -(instancetype _Nullable) initWithFile:(NSString * _Nonnull) fileName;
 -(instancetype _Nullable ) initWithRawString:(NSString * _Nonnull) rawString;
+-(instancetype _Nullable ) initWithData:(NSData * _Nonnull) data;
 
 @property (nonatomic, weak) id <AIMOnAirDocumentParserDelegate> _Nullable delegate;
 

@@ -8,9 +8,9 @@
 
 
 #import <UIKit/UIKit.h>
-#import "AIMOnAirDocument.h"
+#import "AIMOnAirItemTableViewCell.h"
 
-@interface AIMEPGTableViewCell : UITableViewCell
+@interface AIMEPGTableViewCell : UITableViewCell<AIMOnAirItemTableViewCell>
 @property (weak, nonatomic) IBOutlet UIImageView *epgImageView;
 @property (weak, nonatomic) IBOutlet UILabel *epgTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *epgPresenterLabel;
@@ -18,5 +18,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *epgStartTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *epgDescriptionLabel;
 
-- (void) configureCellWithItem:(AIMEPGItem *) item;
+- (void) configureCellWithEPGItem:(AIMEPGItem *) item;
 @end

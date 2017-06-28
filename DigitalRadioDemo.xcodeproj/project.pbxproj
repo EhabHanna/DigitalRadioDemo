@@ -65,6 +65,7 @@
 		B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AimHeaderViewCell.m; sourceTree = "<group>"; };
 		B20F9AA01EFFE50E005C515F /* AIMIconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMIconDownloader.h; sourceTree = "<group>"; };
 		B20F9AA11EFFE50E005C515F /* AIMIconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIMIconDownloader.m; sourceTree = "<group>"; };
+		B20F9AA51F031D94005C515F /* AIMOnAirItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIMOnAirItemTableViewCell.h; sourceTree = "<group>"; };
 		B28467291EFCA46B0039A7FA /* DigitalRadioDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalRadioDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B284672D1EFCA46B0039A7FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B284672F1EFCA46B0039A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				B20F9A941EFF9EC9005C515F /* AIMPlayoutTableViewCell.m */,
 				B20F9A9C1EFFC2AD005C515F /* AimHeaderViewCell.h */,
 				B20F9A9D1EFFC2AD005C515F /* AimHeaderViewCell.m */,
+				B20F9AA51F031D94005C515F /* AIMOnAirItemTableViewCell.h */,
 			);
 			name = " Views";
 			sourceTree = "<group>";

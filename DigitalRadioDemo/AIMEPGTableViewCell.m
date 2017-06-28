@@ -21,8 +21,14 @@
     // Configure the view for the selected state
 }
 
+- (void) prepareForReuse{
+    self.epgImageView.image = [UIImage imageNamed:@"defaultImage"];
+}
 
--(void) configureCellWithItem:(AIMEPGItem *)item{
+#pragma mark - 
+#pragma mark AIMOnAirItemTableViewCell methods
+
+-(void) configureCellWithEPGItem:(AIMEPGItem *)item{
     
     self.epgStartTimeLabel.text = [item timeAccordingToFormat:@"E d MMM 'at' hh:mm a"];
     self.epgDurationLabel.text = [item durationAccordingToFormat:@"H 'hrs' m 'mins'"];
@@ -36,7 +42,21 @@
     }
 }
 
-- (void) prepareForReuse{
-    self.epgImageView.image = [UIImage imageNamed:@"defaultImage"];
+- (void) configureCellWithItem:(AIMOnAirDocumentItem *)item{
+    
+    if ([item isKindOfClass:[AIMEPGItem class]]) {
+        [self configureCellWithEPGItem:(AIMEPGItem *)item];
+    }
+    
 }
+
+- (void) updateImage:(UIImage *)image{
+    if (image) {
+        self.epgImageView.image = image;
+    }else{
+        self.epgImageView.image = [UIImage imageNamed:@"defaultImage"];
+    }
+}
+
+
 @end

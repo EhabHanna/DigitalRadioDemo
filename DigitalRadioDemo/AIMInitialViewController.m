@@ -59,7 +59,7 @@ typedef enum {
 - (void) getOnAirDataSource{
     
     NSString *localCopyPath = [[self getPathForCachedOnAirData] stringByAppendingPathComponent:@"onair"];
-    [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
+    localCopyPath = [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:localCopyPath]) {
         //use local copy
@@ -91,7 +91,7 @@ typedef enum {
 - (void) deleteCachedOnAirData{
     
     NSString *localCopyPath = [[self getPathForCachedOnAirData] stringByAppendingPathComponent:@"onair"];
-    [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
+    localCopyPath = [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
     
     NSError *error = nil;
     
@@ -105,7 +105,7 @@ typedef enum {
 - (void) saveOnAirDataToDisk:(NSData *) file{
     
     NSString *localCopyPath = [[self getPathForCachedOnAirData] stringByAppendingPathComponent:@"onair"];
-    [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
+    localCopyPath = [localCopyPath stringByAppendingPathExtension:self.onAirDocumentType];
     
     [file writeToFile:localCopyPath atomically:YES];
 }
@@ -129,9 +129,7 @@ typedef enum {
                 [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                 
                 if (xmlDataFile) {
-                    
-                    NSString *xmlString = [[NSString alloc] initWithData:xmlDataFile encoding:NSUTF8StringEncoding];
-                    self.onAirDocumentParser = [[AIMOnAirXMLParser alloc] initWithRawString:xmlString];
+                    self.onAirDocumentParser = [[AIMOnAirXMLParser alloc] initWithData:xmlDataFile];
                     [self parseOnAirData];
                 }else{
                     [self showDataFetchErrorAlert];

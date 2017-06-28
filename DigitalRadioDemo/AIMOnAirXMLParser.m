@@ -51,9 +51,21 @@
     if (!rawString || rawString.length == 0) {
         return nil;
     }
+    self = [self initWithData:[rawString dataUsingEncoding:NSUTF8StringEncoding]];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (instancetype)initWithData:(NSData *)data
+{
+    if (!data || data.length == 0) {
+        return nil;
+    }
     self = [self init];
     if (self) {
-        self.parser = [[NSXMLParser alloc] initWithData:[rawString dataUsingEncoding:NSUTF8StringEncoding]];
+        self.parser = [[NSXMLParser alloc] initWithData:data];
         if (!self.parser) {
             return nil;
         }

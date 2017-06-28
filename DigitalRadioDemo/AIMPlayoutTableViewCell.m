@@ -21,7 +21,7 @@
     // Configure the view for the selected state
 }
 
-- (void) configureCellWithItem:(AIMPlayoutItem *) item{
+- (void) configureCellWithPlayoutItem:(AIMPlayoutItem *) item{
     
     self.playoutTitleLabel.text = item.title;
     self.playoutArtistLabel.text = item.artist;
@@ -75,5 +75,27 @@
 - (void) prepareForReuse{
     self.playoutImageView.image = [UIImage imageNamed:@"defaultImage"];
 }
+
+
+#pragma mark -
+#pragma mark AIMOnAirItemTableViewCell methods
+
+- (void) configureCellWithItem:(AIMOnAirDocumentItem *)item{
+    
+    if ([item isKindOfClass:[AIMPlayoutItem class]]) {
+        [self configureCellWithPlayoutItem:(AIMPlayoutItem *)item];
+    }
+    
+}
+
+- (void) updateImage:(UIImage *)image{
+    if (image) {
+        self.playoutImageView.image = image;
+    }else{
+        self.playoutImageView.image = [UIImage imageNamed:@"defaultImage"];
+    }
+    
+}
+
 
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AIMOnAirDocument.h"
+#import "AIMOnAirItemTableViewCell.h"
 
-@interface AIMPlayoutTableViewCell : UITableViewCell
+@interface AIMPlayoutTableViewCell : UITableViewCell<AIMOnAirItemTableViewCell>
 @property (weak, nonatomic) IBOutlet UIImageView *playoutImageView;
 @property (weak, nonatomic) IBOutlet UILabel *playoutTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playoutArtistLabel;
